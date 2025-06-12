@@ -1,0 +1,412 @@
+[
+  {
+    "tag": "div",
+    "meta": {
+      "class": [
+        "a-container",
+        "a-padding-double-large"
+      ],
+      "style": "min-width:350px;padding:44px 0 !important",
+      "text": "Click the button below to continue shoppingContinue shoppingConditions of Use & SalePrivacy Notice© 1996-2025, Amazon.com, Inc. or its affiliates"
+    },
+    "group": "group_1",
+    "children": [
+      {
+        "tag": "div",
+        "meta": {
+          "class": [
+            "a-row",
+            "a-spacing-double-large"
+          ],
+          "style": "width: 350px; margin: 0 auto",
+          "text": "Click the button below to continue shoppingContinue shopping"
+        },
+        "group": "group_1",
+        "children": [
+          {
+            "tag": "div",
+            "meta": {
+              "class": [
+                "a-row",
+                "a-spacing-medium",
+                "a-text-center"
+              ]
+            },
+            "group": "group_1",
+            "children": [
+              {
+                "tag": "i",
+                "meta": {
+                  "class": [
+                    "a-icon",
+                    "a-logo"
+                  ],
+                  "alt": "Amazon logo"
+                },
+                "group": "group_1"
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "meta": {
+              "class": [
+                "a-box",
+                "a-alert",
+                "a-alert-info",
+                "a-spacing-base"
+              ],
+              "text": "Click the button below to continue shopping"
+            },
+            "group": "group_1",
+            "children": [
+              {
+                "tag": "div",
+                "meta": {
+                  "class": [
+                    "a-box-inner"
+                  ],
+                  "text": "Click the button below to continue shopping"
+                },
+                "group": "group_1",
+                "children": [
+                  {
+                    "tag": "i",
+                    "meta": {
+                      "class": [
+                        "a-icon",
+                        "a-icon-alert"
+                      ],
+                      "alt": "Alert icon"
+                    },
+                    "group": "group_1"
+                  },
+                  {
+                    "tag": "h4",
+                    "meta": {
+                      "text": "Click the button below to continue shopping"
+                    },
+                    "group": "group_1",
+                    "children": [
+                      {
+                        "text": "Click the button below to continue shopping",
+                        "group": "group_1"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "meta": {
+              "class": [
+                "a-section"
+              ],
+              "text": "Continue shopping"
+            },
+            "group": "group_1",
+            "children": [
+              {
+                "tag": "div",
+                "meta": {
+                  "class": [
+                    "a-box",
+                    "a-color-offset-background"
+                  ],
+                  "text": "Continue shopping"
+                },
+                "group": "group_1",
+                "children": [
+                  {
+                    "tag": "div",
+                    "meta": {
+                      "class": [
+                        "a-box-inner",
+                        "a-padding-extra-large"
+                      ],
+                      "text": "Continue shopping"
+                    },
+                    "group": "group_1",
+                    "children": [
+                      {
+                        "tag": "form",
+                        "meta": {
+                          "method": "get",
+                          "action": "/errors/validateCaptcha",
+                          "name": "",
+                          "text": "Continue shopping"
+                        },
+                        "group": "group_1",
+                        "children": [
+                          {
+                            "tag": "input",
+                            "meta": {
+                              "type": "hidden",
+                              "name": "amzn",
+                              "value": "SxKobDNOrrMMAXdUPxs3iA=="
+                            },
+                            "group": "group_1"
+                          },
+                          {
+                            "tag": "input",
+                            "meta": {
+                              "type": "hidden",
+                              "name": "amzn-r",
+                              "value": "/Taj-2-Strong-Double-Brackets-Curtain/dp/B07C5QCF8L"
+                            },
+                            "group": "group_1"
+                          },
+                          {
+                            "tag": "input",
+                            "meta": {
+                              "type": "hidden",
+                              "name": "field-keywords",
+                              "value": "CARABE"
+                            },
+                            "group": "group_1"
+                          },
+                          {
+                            "tag": "div",
+                            "meta": {
+                              "class": [
+                                "a-section",
+                                "a-spacing-extra-large"
+                              ],
+                              "text": "Continue shopping"
+                            },
+                            "group": "group_1",
+                            "children": [
+                              {
+                                "tag": "div",
+                                "meta": {
+                                  "class": [
+                                    "a-row"
+                                  ],
+                                  "text": "Continue shopping"
+                                },
+                                "group": "group_1",
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "meta": {
+                                      "class": [
+                                        "a-button",
+                                        "a-button-primary",
+                                        "a-span12"
+                                      ],
+                                      "text": "Continue shopping"
+                                    },
+                                    "group": "group_1",
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "meta": {
+                                          "class": [
+                                            "a-button-inner"
+                                          ],
+                                          "text": "Continue shopping"
+                                        },
+                                        "group": "group_1",
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "meta": {
+                                              "type": "submit",
+                                              "class": [
+                                                "a-button-text"
+                                              ],
+                                              "alt": "Continue shopping",
+                                              "text": "Continue shopping"
+                                            },
+                                            "group": "group_1",
+                                            "children": [
+                                              {
+                                                "text": "Continue shopping",
+                                                "group": "group_1"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "meta": {
+          "class": [
+            "a-divider",
+            "a-divider-section"
+          ]
+        },
+        "group": "group_1",
+        "children": [
+          {
+            "tag": "div",
+            "meta": {
+              "class": [
+                "a-divider-inner"
+              ]
+            },
+            "group": "group_1"
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "meta": {
+          "class": [
+            "a-text-center",
+            "a-spacing-small",
+            "a-size-mini"
+          ],
+          "text": "Conditions of Use & SalePrivacy Notice"
+        },
+        "group": "group_1",
+        "children": [
+          {
+            "tag": "a",
+            "meta": {
+              "href": "https://www.amazon.in/gp/help/customer/display.html/ref=footer_cou?ie=UTF8&nodeId=200545940",
+              "link": "https://www.amazon.in/gp/help/customer/display.html/ref=footer_cou?ie=UTF8&nodeId=200545940",
+              "text": "Conditions of Use & Sale"
+            },
+            "group": "group_1",
+            "children": [
+              {
+                "text": "Conditions of Use & Sale",
+                "group": "group_1"
+              }
+            ]
+          },
+          {
+            "tag": "span",
+            "meta": {
+              "class": [
+                "a-letter-space"
+              ]
+            },
+            "group": "group_1"
+          },
+          {
+            "tag": "span",
+            "meta": {
+              "class": [
+                "a-letter-space"
+              ]
+            },
+            "group": "group_1"
+          },
+          {
+            "tag": "span",
+            "meta": {
+              "class": [
+                "a-letter-space"
+              ]
+            },
+            "group": "group_1"
+          },
+          {
+            "tag": "span",
+            "meta": {
+              "class": [
+                "a-letter-space"
+              ]
+            },
+            "group": "group_1"
+          },
+          {
+            "tag": "a",
+            "meta": {
+              "href": "https://www.amazon.in/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&nodeId=200534380",
+              "link": "https://www.amazon.in/gp/help/customer/display.html/ref=footer_privacy?ie=UTF8&nodeId=200534380",
+              "text": "Privacy Notice"
+            },
+            "group": "group_1",
+            "children": [
+              {
+                "text": "Privacy Notice",
+                "group": "group_1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "meta": {
+          "class": [
+            "a-text-center",
+            "a-size-mini",
+            "a-color-base"
+          ],
+          "text": "© 1996-2025, Amazon.com, Inc. or its affiliates"
+        },
+        "group": "group_1",
+        "children": [
+          {
+            "text": "© 1996-2025, Amazon.com, Inc. or its affiliates",
+            "group": "group_1"
+          },
+          {
+            "tag": "script",
+            "meta": {
+              "text": "if (true === true) {\n             document.write('<img src=\"https://fls-eu.amaz'+'on.in/'+'1/oc-csi/1/OP/requestId=5ED90EENHNN8VRF0RWBA&js=1\" alt=\"\"/>');\n           };"
+            },
+            "group": "group_1",
+            "children": [
+              {
+                "text": "if (true === true) {\n             document.write('<img src=\"https://fls-eu.amaz'+'on.in/'+'1/oc-csi/1/OP/requestId=5ED90EENHNN8VRF0RWBA&js=1\" alt=\"\"/>');\n           };",
+                "group": "group_1"
+              }
+            ]
+          },
+          {
+            "tag": "noscript",
+            "meta": null,
+            "group": "group_1",
+            "children": [
+              {
+                "tag": "img",
+                "meta": {
+                  "src": "https://fls-eu.amazon.in/1/oc-csi/1/OP/requestId=5ED90EENHNN8VRF0RWBA&js=0",
+                  "alt": "",
+                  "image_url": "https://fls-eu.amazon.in/1/oc-csi/1/OP/requestId=5ED90EENHNN8VRF0RWBA&js=0"
+                },
+                "group": "group_1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "tag": "script",
+    "meta": {
+      "text": "if (true === true) {\n        var head = document.getElementsByTagName('head')[0],\n            prefix = \"https://images-eu.ssl-images-amazon.com/images/G/01/csminstrumentation/\",\n            elem = document.createElement(\"script\");\n        elem.src = prefix + \"csm-captcha-instrumentation.min.js\";\n        head.appendChild(elem);\n\n        elem = document.createElement(\"script\");\n        elem.src = prefix + \"rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\";\n        head.appendChild(elem);\n    }"
+    },
+    "group": "group_2",
+    "children": [
+      {
+        "text": "if (true === true) {\n        var head = document.getElementsByTagName('head')[0],\n            prefix = \"https://images-eu.ssl-images-amazon.com/images/G/01/csminstrumentation/\",\n            elem = document.createElement(\"script\");\n        elem.src = prefix + \"csm-captcha-instrumentation.min.js\";\n        head.appendChild(elem);\n\n        elem = document.createElement(\"script\");\n        elem.src = prefix + \"rd-script-6d68177fa6061598e9509dc4b5bdd08d.js\";\n        head.appendChild(elem);\n    }",
+        "group": "group_2"
+      }
+    ]
+  }
+]
