@@ -30,4 +30,5 @@ else:
 
 # Save or view the output
 with open("flattened_output.json", "w",encoding="utf-8") as f:
-    json.dump(flat_result, f, indent=2)
+    data={"url":"https://www.amazon.com","data":flat_result}
+    json.dump(data, f, indent=2)
