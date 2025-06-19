@@ -1,0 +1,504 @@
+[
+  {
+    "$match": {
+      "url": {
+        "$in": [
+          "https://example.com/product1",
+          "https://example.com/product2"
+        ]
+      }
+    }
+  },
+  {
+    "$unwind": "$data"
+  },
+  {
+    "$match": {
+      "data.selector": {
+        "$in": [
+          "html.no-js > body.wp-singular.page-template.page-template-templates.page-template-book-details.page-template-templatesbook-details-php.page.page-id-16894.wp-theme-harper-collins-global.wp-child-theme-harper-collins-ca-child.fl-builder-2-8-6-1.tribe-no-js > noscript",
+          ".size-select-main",
+          ".price",
+          ".discount-price",
+          ".original-price",
+          ".currency-info",
+          ".size-select",
+          ".product-color",
+          ".color-variants",
+          ".size-options",
+          ".available-sizes"
+        ]
+      }
+    }
+  },
+  {
+    "$addFields": {
+      "fieldName": {
+        "$switch": {
+          "branches": [
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  "html.no-js > body.wp-singular.page-template.page-template-templates.page-template-book-details.page-template-templatesbook-details-php.page.page-id-16894.wp-theme-harper-collins-global.wp-child-theme-harper-collins-ca-child.fl-builder-2-8-6-1.tribe-no-js > noscript"
+                ]
+              },
+              "then": "product_name"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".size-select-main"
+                ]
+              },
+              "then": "select_size"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".price"
+                ]
+              },
+              "then": "price"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".discount-price"
+                ]
+              },
+              "then": "discount_price"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".original-price"
+                ]
+              },
+              "then": "original_price"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".currency-info"
+                ]
+              },
+              "then": "currency_info"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".size-select"
+                ]
+              },
+              "then": "select_size"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".product-color"
+                ]
+              },
+              "then": "product_color"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".color-variants"
+                ]
+              },
+              "then": "color_variants"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".size-options"
+                ]
+              },
+              "then": "size_options"
+            },
+            {
+              "case": {
+                "$eq": [
+                  "$data.selector",
+                  ".available-sizes"
+                ]
+              },
+              "then": "available_sizes"
+            }
+          ],
+          "default": "unknown"
+        }
+      }
+    }
+  },
+  {
+    "$group": {
+      "_id": {
+        "url": "$url"
+      },
+      "schemaFields": {
+        "$push": {
+          "k": "$fieldName",
+          "v": {
+            "selector": "$data.selector",
+            "userCreated": {
+              "$cond": [
+                {
+                  "$in": [
+                    "$fieldName",
+                    [
+                      "select_size",
+                      "discount_price",
+                      "currency_info",
+                      "select_size",
+                      "product_color",
+                      "size_options"
+                    ]
+                  ]
+                },
+                "true",
+                "false"
+              ]
+            },
+            "isDynamic": {
+              "$cond": [
+                {
+                  "$in": [
+                    "$fieldName",
+                    [
+                      "product_name",
+                      "select_size",
+                      "price",
+                      "discount_price",
+                      "original_price",
+                      "select_size",
+                      "product_color",
+                      "color_variants",
+                      "available_sizes"
+                    ]
+                  ]
+                },
+                "true",
+                "false"
+              ]
+            },
+            "value": "$data.meta"
+          }
+        }
+      }
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "url": "$_id.url",
+      "schema": {
+        "$arrayToObject": "$schemaFields"
+      }
+    }
+  },
+  {
+    "$project": {
+      "_id": 0,
+      "url": 1,
+      "schema": {
+        "product_name": {
+          "selector": {
+            "$ifNull": [
+              "$schema.product_name.selector",
+              null
+            ]
+          },
+          "userCreated": {
+            "$ifNull": [
+              "$schema.product_name.userCreated",
+              "false"
+            ]
+          },
+          "isDynamic": {
+            "$ifNull": [
+              "$schema.product_name.isDynamic",
+              "true"
+            ]
+          },
+          "value": {
+            "$ifNull": [
+              "$schema.product_name.value",
+              null
+            ]
+          },
+          "select_size": {
+            "selector": {
+              "$ifNull": [
+                "$schema.select_size.selector",
+                null
+              ]
+            },
+            "userCreated": {
+              "$ifNull": [
+                "$schema.select_size.userCreated",
+                "true"
+              ]
+            },
+            "isDynamic": {
+              "$ifNull": [
+                "$schema.select_size.isDynamic",
+                "true"
+              ]
+            },
+            "value": {
+              "$ifNull": [
+                "$schema.select_size.value",
+                null
+              ]
+            },
+            "size_options": {
+              "selector": {
+                "$ifNull": [
+                  "$schema.size_options.selector",
+                  null
+                ]
+              },
+              "userCreated": {
+                "$ifNull": [
+                  "$schema.size_options.userCreated",
+                  "true"
+                ]
+              },
+              "isDynamic": {
+                "$ifNull": [
+                  "$schema.size_options.isDynamic",
+                  "false"
+                ]
+              },
+              "value": {
+                "$ifNull": [
+                  "$schema.size_options.value",
+                  null
+                ]
+              },
+              "available_sizes": {
+                "selector": {
+                  "$ifNull": [
+                    "$schema.available_sizes.selector",
+                    null
+                  ]
+                },
+                "userCreated": {
+                  "$ifNull": [
+                    "$schema.available_sizes.userCreated",
+                    "false"
+                  ]
+                },
+                "isDynamic": {
+                  "$ifNull": [
+                    "$schema.available_sizes.isDynamic",
+                    "true"
+                  ]
+                },
+                "value": {
+                  "$ifNull": [
+                    "$schema.available_sizes.value",
+                    null
+                  ]
+                }
+              }
+            }
+          },
+          "product_color": {
+            "selector": {
+              "$ifNull": [
+                "$schema.product_color.selector",
+                null
+              ]
+            },
+            "userCreated": {
+              "$ifNull": [
+                "$schema.product_color.userCreated",
+                "true"
+              ]
+            },
+            "isDynamic": {
+              "$ifNull": [
+                "$schema.product_color.isDynamic",
+                "true"
+              ]
+            },
+            "value": {
+              "$ifNull": [
+                "$schema.product_color.value",
+                null
+              ]
+            },
+            "color_variants": {
+              "selector": {
+                "$ifNull": [
+                  "$schema.color_variants.selector",
+                  null
+                ]
+              },
+              "userCreated": {
+                "$ifNull": [
+                  "$schema.color_variants.userCreated",
+                  "false"
+                ]
+              },
+              "isDynamic": {
+                "$ifNull": [
+                  "$schema.color_variants.isDynamic",
+                  "true"
+                ]
+              },
+              "value": {
+                "$ifNull": [
+                  "$schema.color_variants.value",
+                  null
+                ]
+              }
+            }
+          }
+        },
+        "select_size": {
+          "selector": {
+            "$ifNull": [
+              "$schema.select_size.selector",
+              null
+            ]
+          },
+          "userCreated": {
+            "$ifNull": [
+              "$schema.select_size.userCreated",
+              "true"
+            ]
+          },
+          "isDynamic": {
+            "$ifNull": [
+              "$schema.select_size.isDynamic",
+              "true"
+            ]
+          },
+          "value": {
+            "$ifNull": [
+              "$schema.select_size.value",
+              null
+            ]
+          }
+        },
+        "price": {
+          "selector": {
+            "$ifNull": [
+              "$schema.price.selector",
+              null
+            ]
+          },
+          "userCreated": {
+            "$ifNull": [
+              "$schema.price.userCreated",
+              "false"
+            ]
+          },
+          "isDynamic": {
+            "$ifNull": [
+              "$schema.price.isDynamic",
+              "true"
+            ]
+          },
+          "value": {
+            "$ifNull": [
+              "$schema.price.value",
+              null
+            ]
+          },
+          "discount_price": {
+            "selector": {
+              "$ifNull": [
+                "$schema.discount_price.selector",
+                null
+              ]
+            },
+            "userCreated": {
+              "$ifNull": [
+                "$schema.discount_price.userCreated",
+                "true"
+              ]
+            },
+            "isDynamic": {
+              "$ifNull": [
+                "$schema.discount_price.isDynamic",
+                "true"
+              ]
+            },
+            "value": {
+              "$ifNull": [
+                "$schema.discount_price.value",
+                null
+              ]
+            }
+          },
+          "original_price": {
+            "selector": {
+              "$ifNull": [
+                "$schema.original_price.selector",
+                null
+              ]
+            },
+            "userCreated": {
+              "$ifNull": [
+                "$schema.original_price.userCreated",
+                "false"
+              ]
+            },
+            "isDynamic": {
+              "$ifNull": [
+                "$schema.original_price.isDynamic",
+                "true"
+              ]
+            },
+            "value": {
+              "$ifNull": [
+                "$schema.original_price.value",
+                null
+              ]
+            },
+            "currency_info": {
+              "selector": {
+                "$ifNull": [
+                  "$schema.currency_info.selector",
+                  null
+                ]
+              },
+              "userCreated": {
+                "$ifNull": [
+                  "$schema.currency_info.userCreated",
+                  "true"
+                ]
+              },
+              "isDynamic": {
+                "$ifNull": [
+                  "$schema.currency_info.isDynamic",
+                  "false"
+                ]
+              },
+              "value": {
+                "$ifNull": [
+                  "$schema.currency_info.value",
+                  null
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]
